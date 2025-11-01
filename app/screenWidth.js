@@ -23,7 +23,7 @@ export default function AdaptWindowWidth() {
 
   return (
     <>
-      <div>{windowWidth}</div>
+      <div>Current Window Size: {windowWidth} px.</div>
     </>
   );
 }
