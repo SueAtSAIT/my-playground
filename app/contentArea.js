@@ -35,6 +35,7 @@ export default function ContentArea() {
       </div>
       <h1 className="text-4xl uppercase">{resourceType}</h1>
       {items.map((item) => {
+        // React is barking at this since the same ids are used in the 3 different resourceTypes but no other common element to include for mitigation
         return <pre key="id">{JSON.stringify(item)}</pre>;
       })}
     </>
