@@ -1,12 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
+import GetRecipes from "./getRecipes";
 
 export default function ClickableCard() {
   const [name, setName] = useState("default");
 
   function handleClick() {
     setName("chicken");
+    // <GetRecipes name={name} />;
   }
 
   return (

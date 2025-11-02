@@ -6,6 +6,7 @@ import PublicAPIs from "./fetchFacts.js";
 import EmailCheckComponent from "./emailValidator.js";
 import DisplayWeather from "./displayWeather.js";
 import ClickableCard from "./clickableCard.js";
+import GetRecipes from "./getRecipes.js";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <PublicAPIs />
         <EmailCheckComponent />
         <ClickableCard />
+        <GetRecipes />
         {/* <DisplayWeather /> */}
         {/* <ContentArea /> */}
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
