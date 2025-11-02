@@ -11,6 +11,11 @@ export default function GetRecipes() {
       const response = await fetch(
         `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`
       );
+      if (!response.ok) {
+        throw new Error(
+          `HTTP error, couldn't fetch data. Status: ${response.status}`
+        );
+      }
       const data = await response.json();
       console.log(`API response for ${ingredient}`, data);
 
@@ -37,17 +42,17 @@ export default function GetRecipes() {
       <button onClick={apiCall} className="bg-blue-200 ml-2">
         Get Recipes
       </button>
-      <p>Recipe Ideas: </p>
-      {result.length > 0 ? (
-        <ul>
-          {result.map((meal) => (
-            <li key={meal.idMeal}>{meal.strMeal}</li>
-          ))}
-        </ul>
-      ) : (
-        <p></p>
-        // <p>No recipes found.</p> ***update to use error state handling
-      )}
+
+      {(result || []).map((meal) => (
+        <div key={meal.idMeal}>
+          <ul>
+            <li key={meal.idMeal}>
+              <img src={meal.strMealThumb} alt={meal.strMeal} width="50px" />
+              {meal.strMeal}
+            </li>
+          </ul>
+        </div>
+      ))}
     </div>
   );
 }
