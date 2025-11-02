@@ -5,6 +5,7 @@ import React, { useState } from "react";
 export default function GetRecipes() {
   const [ingredient, setIngredient] = useState("chicken");
   const [result, setResult] = useState([]);
+  const [error, setError] = useState(null);
 
   const apiCall = async () => {
     try {
@@ -21,11 +22,13 @@ export default function GetRecipes() {
 
       if (data) {
         setResult(data.meals);
+        setError(null);
       } else {
         setResult([]);
       }
-    } catch (error) {
-      console.log(error);
+    } catch (e) {
+      console.log(e.message);
+      setError(e.message);
       setResult([]);
     }
   };
