@@ -36,7 +36,7 @@ export default function EmailCheckComponent() {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter your email"
       />
-      <button onClick={validateEmail} className="bg-blue-200">
+      <button onClick={validateEmail} className="bg-blue-200 ml-2">
         Check
       </button>
       <p>{result}</p>

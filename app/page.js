@@ -5,6 +5,7 @@ import AdaptWindowWidth from "./screenWidth.js";
 import PublicAPIs from "./fetchFacts.js";
 import EmailCheckComponent from "./emailValidator.js";
 import DisplayWeather from "./displayWeather.js";
+import ClickableCard from "./clickableCard.js";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <CounterButton />
         <PublicAPIs />
         <EmailCheckComponent />
+        <ClickableCard />
         {/* <DisplayWeather /> */}
         {/* <ContentArea /> */}
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
